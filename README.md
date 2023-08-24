@@ -53,6 +53,14 @@ Want a custom font? For some reason, this is a very complicated process. Here ar
 Q: What is the METHOD parameter for?
 
 A: The method determines how allocations are chosen from signals. Look at the state_to_allocation_dict method in the Backtest class to see the possible methods and what they allocate.
+
+Q: What is the USE_MODIFIED_SP_500 parameter for?
+
+A: A formula courtesy of modern_football himself allows you to manipulate close data to have a specific CAGR and volatility. Setting USE_MODIFIED_SP_500 to True will apply this formula using the values supplied in MODIFIED_SP_500_CAGR and MODIFIED_SP_500_VOL.
+
+Q: Why is the modified CAGR off?
+
+A: This happens because the CAGR given is applied over the ENTIRE time period of S&P 500 data available. However, when the backtest is done, a chunk of the start is cut off because momentum needs to be calculated before making an initial allocation. Volatility will also be a bit off because of this, but it isn't as noticeable because volatility is mean reverting.
     
 # Data sources 
 
