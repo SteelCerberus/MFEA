@@ -4,25 +4,19 @@ MFEA stands for Modern_Football's Excellent Adventure, which can alternatively b
 
 The strategy combines volatility clustering, momentum, and leverage to generate outsized returns with risk lower than that of 2x leverage.
 
-This repository contains a Python script and a Jupyter Notebook to backtest MFEA in an easily customizable way.
+This repository contains a Jupyter Notebook to backtest MFEA in an easily customizable way.
 
 # Getting Started
 
-## Jupyter Notebook
-
-This is recommended over the Python script due to ease of use.
-
-1. If not already done, install Jupyter Lab or Jupyter Notebook. It is highly recommended to get an extension to collapse cells.
+1. If not already done, install Jupyter Lab or Jupyter Notebook. It is highly recommended to get an extension to collapse cells. Here is a tutorial: https://towardsdatascience.com/how-to-set-up-anaconda-and-jupyter-notebook-the-right-way-de3b7623ea4a
    
-2. Create a virtual environment for the project.
-   
-3. Through your preferred method, download and open MF'rs Excellent Adventure.ipynb and daily_us_market_data.csv
+2. In a command line interface, run git clone https://github.com/SteelCerberus/MFEA.git
+
+3. Create a virtual environment for the project.
    
 4. Install all required libraries.
    
-5. In the cell containing the line EXTENDED_DATA_PATH = r'data/daily_us_market_data.csv', change the path to where you have stored daily_us_market_data.csv. This can be an absolute or relative path.
-    
-6. Run all cells in order.
+5. Open mfea.ipynb and run all cells.
 
 Want a custom font? For some reason, this is a very complicated process. Here are the steps that worked for me on Windows 10 using Anaconda on Jupyter Notebook:
 
@@ -35,18 +29,6 @@ Want a custom font? For some reason, this is a very complicated process. Here ar
 4. Relaunch notebook and run some lines of code
 
 5. New fontlist file should appear, and font should be working
-
-## Python Script
-
-1. Create a virtual environment for the project.
-   
-2. Through your preferred method, download and open MF'rs Excellent Adventure.ipynb and daily_us_market_data.csv
-   
-3. Install all required libraries.
-   
-4. In the line EXTENDED_DATA_PATH = r'data/daily_us_market_data.csv', change the path to where you have stored daily_us_market_data.csv. This can be an absolute or relative path.
-   
-5. Run the script. Windows will open containing plots. Once done looking at these, close the plot to have the script continue running.
 
 # FAQ
 
@@ -64,13 +46,15 @@ A: This happens because the CAGR given is applied over the ENTIRE time period of
 
 **Q: There's too much here. Tell me what to invest in.**
 
-A: Set USE_EXTENDED_DATA to False. Ensure SP_500_TICKER is 'SPY'. Run the script. One of the printed out lines after all the charts will state the current allocation.
+A: Set USE_EXTENDED_DATA to False. Set USE_DAILY_TBILL to True. Set SP_500_TICKER to 'SPY', 'VFINX', 'VFIAX', or any other S&P 500 fund. Run the script. One of the printed out lines after all the charts will state the current allocation.
     
 # Data sources 
 
-Part of the repository is a file containing daily U.S. risk free rate and stock market data from April 1, 1885 to June 1, 2023. The following lists the sources.
+Under the data directory is KMLM data (January 1, 1992 to November 30, 2020) and U.S. risk free rate & stock market data (April 1, 1885 to June 1, 2023).
 
-## Close Data Sources:
+KMLM data was aquired by hydromod through emailing KFA Funds. The U.S. market data was sourced from the following:
+
+## Stock Close Data Sources:
 
 Note: A 0.0945% expense ratio is applied throughout. (SPY expense ratio as of June 1, 2023)
 
