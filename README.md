@@ -92,6 +92,8 @@ https://finance.yahoo.com/quote/SPY
 
 http://www.econ.yale.edu/~shiller/data.htm
 
+(This is not financial advice.)
+
 **From January 1, 1934 to June 1, 2023:**
 
 3-month treasury bill data, interpolated to daily
